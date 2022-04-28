@@ -107,6 +107,7 @@ CREATE TABLE Purchases (
 		REFERENCES Users (customer_ID)
 );
 
+-- separator
 
 INSERT INTO MANAGER VALUES
 ('7066636290', 'Jason', 'Smith', 'Store', '50.72', '518277758', 'Ray'),
@@ -116,9 +117,7 @@ INSERT INTO MANAGER VALUES
 ('7022483073','Nir','Gilgur','Shoes','30.77','665310543','Peter'),
 ('9104932308','James','Brown','Womens','25.28','621965046','David');
 
-
 INSERT INTO STORE VALUES('12345', '7066636290', '6204689678');
-
 
 INSERT INTO EMPLOYEE VALUES 
 ('4941732246','391470494','rnucciotti0@twitter.com','3749907418','2119709289','9.95','Vaughan','Nucciotti','Reinhold','240 Packers Trail'),
