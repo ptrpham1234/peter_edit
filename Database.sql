@@ -57,8 +57,8 @@ CREATE TABLE Users (
 DROP TABLE IF EXISTS Tracking;
 CREATE TABLE Tracking (
     tracking_ID CHAR(10) NOT NULL,
-    depart_time TIME,
-    arrive_time TIME,
+    depart_time datetime,
+    arrive_time datetime,
     destination CHAR(50) NOT NULL,
     weight DECIMAL(10 , 2 ),
     length DECIMAL(10 , 2 ),
@@ -243,7 +243,8 @@ INSERT INTO USERS VALUES
 ('5853031485', 'Alric', 'Croxton', '6017682180', '94442', '133 Corscot Way'),
 ('9059631397', 'Dwight', 'Eckersall', '7437884663', '78939', '70 4th Pass');
 
-insert into Tracking values ('Sy2HuRUFX2', '2021-06-04 22:42:52', '2021-07-17 03:42:02', '7294 Tomscot Way', 13.86, 44.82, 49.12, 'sSKieYoccM', 7138517899, '6416748263'),
+insert into Tracking values 
+('Sy2HuRUFX2', '2021-06-04 22:42:52', '2021-07-17 03:42:02', '7294 Tomscot Way', 13.86, 44.82, 49.12, 'sSKieYoccM', 7138517899, '6416748263'),
 ('KcnSVy13UM', '2022-01-31 13:37:13', '2021-06-08 00:03:42', '7241 Laurel Point', 17.44, 18.64, 32.35, 'wB8cDMHh6f', 1696928366, '1650035298'),
 ('NwipxdRJVM', '2022-02-08 05:25:11', '2021-09-22 15:52:59', '3 Union Lane', 35.36, 43.54, 42.29, 'Lar6WXvNLy', 5268792434, '6604725132'),
 ('ESg15ulza2', '2021-06-13 07:29:35', '2022-02-21 19:52:39', '01182 Mallard Crossing', 8.38, 11.94, 17.84, 'Nnvc4YiaXv', 2071129437, '3203610731'),
@@ -322,20 +323,63 @@ SELECT
     *
 FROM
     STORE;
+    
 SELECT 
     *
 FROM
     MANAGER;
+    
 SELECT 
     *
 FROM
     EMPLOYEE;
+    
 SELECT 
     *
 FROM
     USERS;
+    
 SELECT 
     *
 FROM
     Tracking;
+    
+SELECT 
+    *
+FROM
+    Brand;
+    
+SELECT 
+    *
+FROM
+    Items;
+    
+SELECT 
+    *
+FROM
+    Purchases;
 
+-- Query example 1: CREATE VIEW total_users AS
+select count(*) as total_users
+FROM Users as total_users;
+
+-- Query example 2:
+SELECT 
+    *
+FROM
+    EMPLOYEE;
+    
+-- Query example 3:
+select Items.item_ID, Items.cost, Items.item_type, Brand.brand_name
+from Brand
+cross join Items on Items.brand_ID=Brand.brand_ID;
+
+-- Query example 4:
+
+
+-- Query example 5:
+SELECT 
+    *
+FROM
+    Tracking
+order by depart_time;
